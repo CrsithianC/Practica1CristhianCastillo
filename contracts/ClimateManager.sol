@@ -28,11 +28,7 @@ contract ClimateManager is Ownable {
         emit FeePercentageUpdated(oldFeePercentage, newFeePercentage);
     }
 
-    function mintNFT(
-        string memory projectName,
-        string memory projectURL,
-        address developerAddress
-    ) external onlyOwner {
+    function mintNFT(string memory projectName, string memory projectURL, address developerAddress) external onlyOwner {
         require(bytes(projectName).length > 0, "El nombre del projecto no puede esar vacio");
         require(bytes(projectURL).length > 0, "La URL del projecto no puede estar vacia");
         require(developerAddress != address(0), "Direccion invalida");

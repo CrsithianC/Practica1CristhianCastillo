@@ -9,10 +9,7 @@ contract ClimateNFT is ERC721URIStorage, Ownable {
 
     constructor(address initialOwner) ERC721("ClimateNFT", "CNFT") Ownable(initialOwner) {}
 
-    function mintNFT(
-        address to,
-        string memory tokenURI
-    ) external onlyOwner returns (uint256) {
+    function mintNFT( address to, string memory tokenURI ) external onlyOwner returns (uint256) {
         uint256 newTokenId = currentTokenId;
         _mint(to, newTokenId);
         _setTokenURI(newTokenId, tokenURI);
